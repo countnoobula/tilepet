@@ -25,6 +25,8 @@ class MoveAction implements ActionInterface
             return;
         }
 
+        // @TODO - Refactor to use A* pathfinding algorithm to determine best path
+
         DB::transaction(function () use ($noobId, $direction, $parameters) {
             $noob = Noob::find($noobId);
             if (!$noob) {

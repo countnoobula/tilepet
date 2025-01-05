@@ -50,6 +50,12 @@ class GatherAction implements ActionInterface
                         $noob->thirst = min(100, $noob->thirst + 20);
                         $noob->save();
 
+                        // Grant experience to Strength
+                        $strengthSkill = $noob->getSkill('strength');
+                        if ($strengthSkill) {
+                            $strengthSkill->addExperience(10); // Example: 10 XP per gather
+                        }
+
                         event(new NoobGathered($noob, 'water', $parameters));
                     } else {
                         Log::warning("Noob ID {$noobId} attempted to gather water on non-water terrain.");
@@ -61,6 +67,12 @@ class GatherAction implements ActionInterface
                         $noob->hunger = min(100, $noob->hunger + 20);
                         $noob->save();
 
+                        // Grant experience to Strength
+                        $strengthSkill = $noob->getSkill('strength');
+                        if ($strengthSkill) {
+                            $strengthSkill->addExperience(10);
+                        }
+
                         event(new NoobGathered($noob, 'food', $parameters));
                     } else {
                         Log::warning("Noob ID {$noobId} attempted to gather food on unsuitable terrain.");
@@ -71,6 +83,12 @@ class GatherAction implements ActionInterface
                         $noob->inventory->addItem('Wood', 1);
                         $noob->save();
 
+                        // Grant experience to Strength
+                        $strengthSkill = $noob->getSkill('strength');
+                        if ($strengthSkill) {
+                            $strengthSkill->addExperience(15); // More XP for harder resources
+                        }
+
                         event(new NoobGathered($noob, 'wood', $parameters));
                     } else {
                         Log::warning("Noob ID {$noobId} attempted to gather wood on non-forest terrain.");
@@ -80,6 +98,12 @@ class GatherAction implements ActionInterface
                     if ($tile->terrain_type === 'mountain') {
                         $noob->inventory->addItem('Stone', 1);
                         $noob->save();
+
+                        // Grant experience to Strength
+                        $strengthSkill = $noob->getSkill('strength');
+                        if ($strengthSkill) {
+                            $strengthSkill->addExperience(20); // Even more XP for harder resources
+                        }
 
                         event(new NoobGathered($noob, 'stone', $parameters));
                     } else {

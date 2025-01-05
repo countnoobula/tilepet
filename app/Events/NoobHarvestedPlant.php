@@ -7,8 +7,9 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use App\Models\Noob;
 use App\Models\Entity;
+use Spatie\EventSourcing\StoredEvents\ShouldBeStored;
 
-class NoobHarvestedPlant
+class NoobHarvestedPlant extends ShouldBeStored
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 

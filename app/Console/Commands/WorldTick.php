@@ -30,7 +30,6 @@ class WorldTick extends Command
     {
         $this->info('Processing a world tick (one day)...');
 
-        // Dispatch the WorldTickJob
         WorldTickJob::dispatch();
 
         $this->info('World tick dispatched successfully.');

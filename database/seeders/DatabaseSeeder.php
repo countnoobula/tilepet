@@ -13,7 +13,8 @@ class DatabaseSeeder extends Seeder
             WorldTileSeeder::class,
             ItemSeeder::class,
             NoobSeeder::class,
-            // Add other seeders if necessary
+            SkillSeeder::class,
+            // Keep the order, Shaun
         ]);
     }
 }
