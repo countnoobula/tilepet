@@ -10,6 +10,8 @@
         "laravel/framework": "^11.31",
         "laravel/horizon": "^5.30",
         "laravel/tinker": "^2.9",
+        "mll-lab/laravel-graphiql": "^3.2",
+        "rebing/graphql-laravel": "^9.7",
         "spatie/laravel-event-sourcing": "^7.10"
     },
     "require-dev": {

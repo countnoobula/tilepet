@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('worlds', function (Blueprint $table) {
-            $table->id();
-
-            $table->string('season')->default('spring'); // e.g., spring, summer, autumn, winter
-            $table->integer('year')->default(1);
-
-            $table->timestamps();
+        Schema::table('worlds', function (Blueprint $table) {
+            $table->integer('temperature')->default(30);
+            $table->integer('humidity')->default(50);
         });
     }
 
@@ -26,6 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('worlds');
+        Schema::table('worlds', function (Blueprint $table) {
+            $table->dropColumn('temperature');
+            $table->dropColumn('humidity');
+        });
     }
 };

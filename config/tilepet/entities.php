@@ -1,31 +1,25 @@
 <?php
 
 return [
-    'plant' => [
-        'name' => 'Plant',
-        'description' => 'A growing plant that can be harvested.',
-        'growth_stages' => 5, // Number of growth stages
-        'inventory' => [
+    'tree' => [
+        'spawnable'       => true,
+        'spawn_count'     => 10, // Number of trees to spawn
+        'suitable_terrain'=> ['grass'],
+        'inventory'       => [
             'enabled' => false,
-            'size' => 0,
+            // Other inventory settings
         ],
-        'spawnable' => true,
-        'suitable_terrain' => [
-            'grass',
-            'soil',
-        ],
+        'growth_stages'   => 3,
     ],
     'chest' => [
-        'name' => 'Chest',
-        'description' => 'A storage container for items.',
-        'inventory' => [
+        'spawnable'       => true,
+        'spawn_count'     => 5,
+        'suitable_terrain'=> ['grass', 'mountain'],
+        'inventory'       => [
             'enabled' => true,
-            'size' => 9
+            // Other inventory settings
         ],
-        'spawnable' => false,
-        'suitable_terrain' => [
-            'grass',
-        ]
+        // No growth stages
     ],
     // Add more entities as needed
 ];

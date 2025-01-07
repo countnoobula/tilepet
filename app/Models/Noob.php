@@ -33,7 +33,7 @@ class Noob extends Model
      */
     public function inventory()
     {
-        return $this->hasOne(Inventory::class);
+        return $this->morphOne(Inventory::class, 'owner');
     }
 
     /**

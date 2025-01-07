@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Season;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Testing\Fluent\Concerns\Has;
@@ -11,19 +12,30 @@ class World extends Model
     use HasFactory;
 
     protected $fillable = [
-        'current_season',
-        'current_year',
+        'season',
+        'year',
+        'temperature',
+        'humidity',
+
+        'tick_count',
 
         'width',
         'height',
-        'tick_count',
+        'seed',
     ];
+
+    protected function casts()
+    {
+        return [
+            'season' => Season::class,
+        ];
+    }
 
     /**
      * Get all tiles for the world.
      */
-    public function worldTiles()
+    public function tiles()
     {
-        return $this->hasMany(WorldTile::class);
+        return $this->hasMany(Tile::class);
     }
 }

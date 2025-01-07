@@ -25,13 +25,6 @@ class NoobSeeder extends Seeder
                 'hunger' => 100,
                 'thirst' => 100,
                 'social' => 50,
-                'strength' => 1,
-                'perception' => 1,
-                'endurance' => 1,
-                'charisma' => 1,
-                'intelligence' => 1,
-                'agility' => 1,
-                'luck' => 1,
             ]);
 
             // Create inventory for the noob

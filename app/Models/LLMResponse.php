@@ -2,13 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class LLMResponse extends Model
 {
-    use HasFactory;
-
     protected $fillable = [
         'noob_id',
         'event_type',
