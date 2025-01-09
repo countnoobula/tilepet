@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Functions;
 
 use App\Jobs\ProcessActionJob;
 use Illuminate\Support\Facades\Log;

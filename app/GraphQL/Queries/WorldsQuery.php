@@ -37,12 +37,13 @@ class WorldsQuery extends Query
     public function resolve($root, array $args, $context, ResolveInfo $resolveInfo, Closure $getSelectFields)
     {
         /** @var SelectFields $fields */
-        $fields = $getSelectFields();
-        $select = $fields->getSelect();       // Columns to select
-        $with = $fields->getRelations();      // Relations to eager load
+        // $fields = $getSelectFields();
+        // $select = $fields->getSelect();       // Columns to select
+        // $with = $fields->getRelations();      // Relations to eager load
 
         // Initialize the query with selected fields and relations
-        $query = World::select($select)->with($with);
+        // $query = World::select($select)->with($with);
+        $query = World::query();
 
         // Apply filters based on arguments
         if (isset($args['id'])) {

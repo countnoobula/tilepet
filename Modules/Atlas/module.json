@@ -1,0 +1,11 @@
+{
+    "name": "Atlas",
+    "alias": "atlas",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Atlas\\Providers\\AtlasServiceProvider"
+    ],
+    "files": []
+}

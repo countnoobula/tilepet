@@ -1,0 +1,30 @@
+#!/usr/bin/env php
+<?php
+
+use Illuminate\Foundation\Console\Kernel;
+
+require __DIR__.'/vendor/autoload.php';
+
+$app = require_once __DIR__.'/bootstrap/app.php';
+
+/** @var Kernel $kernel */
+$kernel = $app->make(Kernel::class);
+
+// Register only specific commands
+$commands = [
+    \App\Console\Commands\Install::class,
+    \Modules\Adam\Console\NoobCreate::class,
+    \Modules\Atlas\Console\WorldCreate::class,
+    \Modules\Atlas\Console\WorldInfo::class,
+];
+
+$kernel->bootstrap();
+
+$application = new Symfony\Component\Console\Application('Tilepet Console', '1.0');
+
+// Register filtered commands
+foreach ($commands as $command) {
+    $application->add($app->make($command));
+}
+
+$application->run();

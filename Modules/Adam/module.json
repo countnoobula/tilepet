@@ -1,0 +1,11 @@
+{
+    "name": "Adam",
+    "alias": "adam",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Adam\\Providers\\AdamServiceProvider"
+    ],
+    "files": []
+}

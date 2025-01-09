@@ -24,6 +24,16 @@ class WorldType extends GraphQLType
                 'description' => 'The id of the world',
             ],
 
+            'name' => [
+                'type' => Type::string(),
+                'description' => 'The name of the world',
+            ],
+
+            'story' => [
+                'type' => Type::string(),
+                'description' => 'The story of the world',
+            ],
+
             'season' => [
                 'type' => GraphQL::type('SeasonEnum'),
                 'description' => 'The current season of the world',
@@ -32,6 +42,7 @@ class WorldType extends GraphQLType
                 'type' => Type::int(),
                 'description' => 'The current year of the world',
             ],
+
             'temperature' => [
                 'type' => Type::int(),
                 'description' => 'The current temperature of the world',
